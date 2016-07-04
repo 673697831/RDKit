@@ -10,4 +10,9 @@
 
 @interface RDLocalPathHelper : NSObject
 
++ (NSString*) documentsPath;
++ (NSString*) libraryPath;
++ (NSString*) tempPath;
++ (NSString*) mimeTypeWithFilePath:(NSString*) filePath;
+
 @end
