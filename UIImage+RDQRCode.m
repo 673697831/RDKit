@@ -7,7 +7,7 @@
 //
 
 #import "UIImage+RDQRCode.h"
-#import "UIImage+MergeImages.h"
+#import "UIImage+RDMergeIcon.h"
 
 @implementation UIImage (RDQRCode)
 
@@ -54,7 +54,7 @@
         return codeImage;
     }
     
-    return [UIImage addIconImage:codeImage withIcon:centerImage];
+    return [UIImage rd_image:codeImage withIcon:centerImage];
 }
 
 //iOS8
