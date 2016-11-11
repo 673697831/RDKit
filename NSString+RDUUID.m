@@ -10,9 +10,17 @@
 
 @implementation NSString (RDUUID)
 
+static NSString *idFromKeyChain = nil;
+
 + (NSString *)rd_uuid
 {
-    return [self idFromKeyChain];
+    if (!idFromKeyChain) {
+        @synchronized (self) {
+            idFromKeyChain = [self idFromKeyChain];
+        }
+    }
+    
+    return idFromKeyChain;
 }
 
 + (NSString *)rd_randomId

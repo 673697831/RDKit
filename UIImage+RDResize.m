@@ -15,12 +15,7 @@
     // 创建一个bitmap的context
     // 并把它设置成为当前正在使用的context
     
-    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]){
-        UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
-    }
-    else{
-        UIGraphicsBeginImageContext(size);
-    }
+    UIGraphicsBeginImageContext(size);
     
     // 绘制改变大小的图片
     [self drawInRect:CGRectMake(0, 0, size.width, size.height)];
